@@ -30,16 +30,11 @@ Eshwaragoli, Hosabettu
     .gallery img:hover {
       transform: scale(1.05);
     }
-      figure {
+    figure {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 0;
-    }
-    figcaption {
-      margin-top: 4px;
-      font-size: 0.8em;
-      color: #555;
     }
   </style>
 </head>
@@ -62,12 +57,12 @@ Eshwaragoli, Hosabettu
 
   <section id="home">
     <h2>Welcome</h2>
-    <p>Welcome to the official website of Sri Brahma Mugera Sri Mahakali Sri Koraga Thaniya Daivastana, Kulai. This site is dedicated to our sacred traditions and cultural heritage.</p>
+    <p>Welcome to the official website of Sri Brahma Mugera, Sri Mahakali, Sri Koraga Thaniya Daivastana, Eshwaragoli, Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
   </section>
 
   <section id="about">
-    <h2>About the Temple</h2>
-    <p>This temple, located in Kulai, Mangalore, is a revered place of worship dedicated to Brahma Mugera and Mahakali. The temple is situated on the way to MRPL from Honakkate and is an important cultural center for the Mugera community and devotees in the region.</p>
+    <h2>About the Daivastana</h2>
+    <p>This dai, located in Eshwaragoli, Hosabettu, is a revered place of worship dedicated to Sri Brahma Mugera, Sri Mahakali, Sri Koraga Thaniya, Sri Daivaraja Guliga. The Daivastana is situated on the way to Kana from Honakkate and is an important cultural center for the Mugera community and devotees in the region.</p>
   </section>
 
   <section id="events">
@@ -95,8 +90,8 @@ Eshwaragoli, Hosabettu
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-  <figure><img src="Gallery/image1.jpeg" alt="Temple Image 1" data-caption="Temple Image 1"><figcaption>Temple Image 1</figcaption></figure>
-  <figure><img src="Gallery/image2.jpeg" alt="Temple Image 2"><figcaption>Temple Image 2</figcaption></figure>
+  <figure><img src="Gallery/image$1.jpeg" alt="" /></figure>
+  <figure><img src="Gallery/image2.jpeg" alt="Temple Image 2"></figure>
   <figure><img src="Gallery/image3.jpeg" alt="Temple Image 3"><figcaption>Temple Image 3</figcaption></figure>
   <figure><img src="Gallery/image4.jpeg" alt="Temple Image 4"><figcaption>Temple Image 4</figcaption></figure>
   <figure><img src="Gallery/image5.jpeg" alt="Temple Image 5"><figcaption>Temple Image 5</figcaption></figure>
@@ -111,7 +106,7 @@ Eshwaragoli, Hosabettu
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Location: Eshwaragoli, Hosabettu, Mangalore, Karnataka<br />
+    <p>Location: Kulai, Mangalore, Karnataka<br />
     Phone: [To be added]<br />
     Email: [To be added]</p>
 
@@ -120,7 +115,7 @@ Eshwaragoli, Hosabettu
   </section>
 
   <footer>
-    <p>&copy; 2025 Sri Brahma Mugera Sri Mahakali Sri Koraga Thaniya Daivastana, Kulai</p>
+    <p>&copy; 2025 Sri Brahma Mugera Sri Mahakali Sri Koraga Thaniya Daivastana, Eshwaragoli, Hosabettu</p>
   </footer>
 <!-- Lightbox Modal -->
 <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:9999;">
@@ -143,7 +138,7 @@ Eshwaragoli, Hosabettu
     lightboxImg.style.opacity = 0;
     setTimeout(() => {
       lightboxImg.src = img.src;
-      lightboxCaption.innerText = img.getAttribute('alt') || '';
+      lightboxCaption.innerText = '';
       lightboxImg.style.opacity = 1;
     }, 150);
     currentIndex = index;
