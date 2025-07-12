@@ -19,9 +19,27 @@ Eshwaragoli, Hosabettu
       margin-top: 1em;
     }
     .gallery img {
-      width: 300px;
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      cursor: pointer;
       border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+      figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+    figcaption {
+      margin-top: 4px;
+      font-size: 0.8em;
+      color: #555;
     }
   </style>
 </head>
@@ -77,12 +95,12 @@ Eshwaragoli, Hosabettu
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-  <img src="Gallery/image1.jpeg" alt="Temple Image 1">
-  <img src="Gallery/image2.jpeg" alt="Temple Image 2">
-  <img src="Gallery/image3.jpeg" alt="Temple Image 3">
-  <img src="Gallery/image4.jpeg" alt="Temple Image 4">
-  <img src="Gallery/image5.jpeg" alt="Temple Image 5">
-  <img src="Gallery/image6.jpeg" alt="Temple Image 6">
+  <figure><img src="Gallery/image1.jpeg" alt="Temple Image 1" data-caption="Temple Image 1"><figcaption>Temple Image 1</figcaption></figure>
+  <figure><img src="Gallery/image2.jpeg" alt="Temple Image 2"><figcaption>Temple Image 2</figcaption></figure>
+  <figure><img src="Gallery/image3.jpeg" alt="Temple Image 3"><figcaption>Temple Image 3</figcaption></figure>
+  <figure><img src="Gallery/image4.jpeg" alt="Temple Image 4"><figcaption>Temple Image 4</figcaption></figure>
+  <figure><img src="Gallery/image5.jpeg" alt="Temple Image 5"><figcaption>Temple Image 5</figcaption></figure>
+  <figure><img src="Gallery/image6.jpeg" alt="Temple Image 6"><figcaption>Temple Image 6</figcaption></figure>
 </div>
   </section>
 
@@ -107,19 +125,77 @@ Eshwaragoli, Hosabettu
 <!-- Lightbox Modal -->
 <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:9999;">
   <span onclick="document.getElementById('lightbox').style.display='none'" style="position:absolute; top:20px; right:30px; color:#fff; font-size:40px; cursor:pointer;">&times;</span>
-  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:8px;" />
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:8px; transition: opacity 0.3s ease;" />
+  <div id="lightbox-caption" style="color:#fff; margin-top:12px; text-align:center; font-size:16px;"><button id="prevBtn" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:40px; cursor:pointer;">&#8249;</button>
+  <button id="nextBtn" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:40px; cursor:pointer;">&#8250;</button>
 </div>
 
 <script>
   const galleryImages = document.querySelectorAll('.gallery img');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  let currentIndex = 0;
 
-  galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
+  function showImage(index) {
+    const img = galleryImages[index];
+    if (!img) return;
+    lightboxImg.style.opacity = 0;
+    setTimeout(() => {
       lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
+      lightboxCaption.innerText = img.getAttribute('alt') || '';
+      lightboxImg.style.opacity = 1;
+    }, 150);
+    currentIndex = index;
+    lightbox.style.display = 'flex';
+  }
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => showImage(index));
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.tagName === 'SPAN') {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display !== 'flex') return;
+    if (e.key === 'ArrowRight') {
+      showImage((currentIndex + 1) % galleryImages.length);
+    } else if (e.key === 'ArrowLeft') {
+      showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+    } else if (e.key === 'Escape') {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage((currentIndex + 1) % galleryImages.length);
+  });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX < touchStartX - 50) {
+      showImage((currentIndex + 1) % galleryImages.length);
+    }
+    if (touchEndX > touchStartX + 50) {
+      showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+    }
   });
 </script>
 
