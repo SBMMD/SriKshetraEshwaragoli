@@ -36,13 +36,80 @@ Eshwaragoli, Hosabettu
       align-items: center;
       margin: 0;
     }
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      padding: 10px;
+    }
+    #lightbox-img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: zoom-in;
+    }
+    #lightbox-img.zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
+    }
+    #lightbox-caption {
+      color: #fff;
+      margin-top: 12px;
+      text-align: center;
+      font-size: 16px;
+    }
+    #image-count {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    #prevBtn, #nextBtn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 40px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
+    #lightbox span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 40px;
+      cursor: pointer;
+      z-index: 10001;
+    }
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 100px;
+        height: 75px;
+      }
+      #lightbox-caption {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1 style="text-align: center;">
-  Sri Brahma Mugera, Sri Mahankali, Sri Koraga Thaniya Daivastana, Eshwaragoli, Hosabettu.
-</h1>
+      Sri Brahma Mugera, Sri Mahankali, Sri Koraga Thaniya Daivastana, Eshwaragoli, Hosabettu.
+    </h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -61,20 +128,17 @@ Eshwaragoli, Hosabettu
   </section>
 
   <section id="about">
-  <h2 style="text-align: left;">About the Daivastana</h2>
-  <h3 style="text-align: center;">ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿ</h3>
-  <p style="text-align: justify;">
-    ದೈವ ದೇವರ ಕೃಪೆಯಲ್ಲಿ ಕಂಗೊಳಿಸುತ್ತಿರುವ ನಮ್ಮ ತುಳುನಾಡಿನ ಅನೇಕ ಆರಾಧನಾ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಮಂಗಳೂರು ತಾಲೂಕು ಹೊಸಬೆಟ್ಟು ಗ್ರಾಮದ ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿಯೂ ಒಂದು. ಸುಮಾರು 350 ವರ್ಷಗಳಷ್ಟು ಇತಿಹಾಸವುಳ್ಳ ಈ ಕ್ಷೇತ್ರವು ಮುಗೇರ ಜನಾಂಗದಲ್ಲಿ ಜನಿಸಿ ನಾಟಿ ವೈದ್ಯೆಯಾದ ಪಯ್ಯು ಮುಗೆರ್ತಿಯು ಗಿಡಮುಲಿಕೆಯಾದ "ಇಸರ ಬೇರ"ನ್ನು ಹುಡುಕುತ್ತಾ ಗೋಳಿ ಮರದ ಬುಡದಲ್ಲಿ ಶಿವನನ್ನು ಪ್ರಾರ್ಥಿಸಿದ ಸಂದರ್ಭದಲ್ಲಿ ಅವಳ ಭಕ್ತಿಗೆ ಮೆಚ್ಚಿ ಪರಮ ಭಕ್ತೆಯಾದ ನಿನಗೆ ಮುಂದೊಂದು ದಿನ ಶಿವಜಾಯೆಯಾದ ಶ್ರೀ ಪಾರ್ವತಿಯು ಮಹಾಂಕಾಳಿಯಾಗಿ ಧರ್ಮದೈವಗಳು ಇಲ್ಲಿ ನೆಲೆಯಾಗಿ ಈ ನೆಲದ ಸತ್ಯವನ್ನು ಕಾಪಾಡುವರು ಎಂದು ಅಭಯ ನೀಡಿ ಮುಂದೆ ಈಶ್ವರಗೋಳಿ ಎಂಬ ನಾಮವು ಜನಜನಿತವಾಗುವುದು ಎಂದು ಹರಸಿದರು.
-    <br /><br />
-    ಮುಂದಕ್ಕೆ ಒಂದು ದಿನ ಉಜ್ಜೋಡಿಯಿಂದ ಶ್ರೀ ಬೊಗ್ರ ಪೂಜಾರಿ ಮತ್ತು ದೆಯ್ಯು ಮುಗೇರ ಇವರ ಭಕ್ತಿಗೆ ಒಲಿದು ಶ್ರೀ ಆದಿಮಾಯೆ ಮಹಾಂಕಾಳಿ ಅಮ್ಮನವರು ಈಶ್ವರಗೋಳಿಯಲ್ಲಿ ಬಂದು ನೆಲೆ ನಿಂತರು. ಇಂತಹ ಶಿವ ಒಲುಮೆಯ ಶ್ರೀ ಕ್ಷೇತ್ರದಲ್ಲಿ ನೆಲೆನಿಂತ ಶ್ರೀ ಬ್ರಹ್ಮರು, ಶ್ರೀ ಧರ್ಮರಸು ಉಳ್ಳಾಯ, ಮಹಾಮಾತೆ ಮಹಾಂಕಾಳಿ, ಶ್ರೀ ಬ್ರಹ್ಮ ಮುಗೇರರು, ಶಕ್ತಿಸ್ವರೂಪಿಣಿಯಾದ ತಂಗಡಿ ದೈವ, ವರಾಹಮೂರ್ತಿ ಅಲೇರಾ ಪಂಜುರ್ಲಿ, ದೈವರಾಜ ಮಂತ್ರಗುಳಿಗ, ಸ್ವಾಮಿ ಕೊರಗಜ್ಜ ಧರ್ಮದೈವಗಳ ಆರಾಧನೆ ನಡೆಯುತ್ತಾ ಬಂತು. ವರ್ಷoಪ್ರತಿ ವಿಜೃಂಭಣೆಯಿಂದ ಮೂರೂ ದಿನಗಳಲ್ಲಿ ನೇಮೋತ್ಸವದ ಈ ಸ್ಥಳ ಭಕ್ತರಿಗೆ ದೇಗುಲವಾಯಿತು. ಕಷ್ಟದಿಂದ ಕಣ್ಣೀರು ಹಾಕಿ ಬಂದವರಿಗೆ ಮಗುವಿನಂತೆಯೇ ರಕ್ಷಿಸಿ ಮಾಂಗಲ್ಯ ಭಾಗ್ಯ, ಸಂತಾನ ಭಾಗ್ಯ, ಸಿರಿ ಸೌಭಾಗ್ಯ ನೀಡುವ ಈ ಮಹಾಮಾತೆ ಮಹಾಂಕಾಳಿ ಅಮ್ಮನವರ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಸನ್ನಿಧಾನ ಸರ್ವಧರ್ಮಗಳ ಸಂಗಮವಾಗಿದೆ.
-    <br /><br />
-    ಈ ಕ್ಷೇತ್ರದ ಶ್ರೀ ಕೊರಗಜ್ಜ ಸಾನಿಧ್ಯವು ಊರ ಪರವೂರ ಭಕ್ತದಿಗಳ ಸಹಾಯದಿಂದ 2014 ರಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರಗೊಂಡು ಭಕ್ತರ ಪಾಲಿಗೆ ಶಕ್ತಿ ಕೇಂದ್ರವಾಗಿದೆ. ಪ್ರತಿ ತಿಂಗಳ ಸಂಕ್ರಮಣದಂದು ದಾನಿಗಳ ಮುಖೇನ  ಸುಮಾರು 1500ಕ್ಕಿಂತಲೂ ಹೆಚ್ಚು ಭಕ್ತಾಧಿಗಳು ಅನ್ನ ಪ್ರಸಾದ ಸ್ವೀಕರಿಸುತ್ತಾರೆ. ಮಾತೆ ಮಹಾಂಕಾಳಿ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಗುಡಿ ಗೋಪುರವನ್ನು ಸಂಪೂರ್ಣ ಶಿಲಾಮಯಗೊಳಿಸಲು ಸುಮಾರು 1 ಕೋಟಿ 50 ಲಕ್ಷಕ್ಕಿಂತಲು ಹೆಚ್ಚಿನ ಮೊತ್ತದಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರ ನಡೆಸಿ ದಿನಾಂಕ 22.04.2024 ರಿಂದ 27.04.2024ರ ತನಕ ಕ್ಷೇತ್ರದಲ್ಲಿ ಪುನರ್ ಪ್ರತಿಷ್ಠಾ ಕಲಶಾಭಿಷೇಕ ಹಾಗೂ ಚಂಡಿಕಾ ಹೋಮದೊಂದಿಗೆ ಲೋಕಾರ್ಪಣೆಗೊಂಡಿದೆ.
-  </p>
+    <h2 style="text-align: left;">About the Daivastana</h2>
+    <h3 style="text-align: center;">ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿ</h3>
+    <p style="text-align: justify;">
+      ದೈವ ದೇವರ ಕೃಪೆಯಲ್ಲಿ ಕಂಗೊಳಿಸುತ್ತಿರುವ ನಮ್ಮ ತುಳುನಾಡಿನ ಅನೇಕ ಆರಾಧನಾ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಮಂಗಳೂರು ತಾಲೂಕು ಹೊಸಬೆಟ್ಟು ಗ್ರಾಮದ ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿಯೂ ಒಂದು. ಸುಮಾರು 350 ವರ್ಷಗಳಷ್ಟು ಇತಿಹಾಸವುಳ್ಳ ಈ ಕ್ಷೇತ್ರವು...
+    </p>
+  </section>
 
   <section id="events">
     <h2>Events</h2>
     <ul>
-      <li>Monthly Sankramana Pooja</li>
+      <li>Monthly Sankramana Pooja - 2025</li>
       <ul>
         <li>January 14: Makara Sankranti</li>
         <li>February 12: Kumbha Sankranti</li>
@@ -89,7 +153,6 @@ Eshwaragoli, Hosabettu
         <li>November 16: Vrischika Sankranti</li>
         <li>December 16: Dhanu Sankranti</li>
       </ul>
-      
       <li>Annual Nemotsava - Date TBD</li>
     </ul>
   </section>
@@ -97,13 +160,13 @@ Eshwaragoli, Hosabettu
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-  <figure><img src="Gallery/image1.jpeg" alt="" /></figure>
-  <figure><img src="Gallery/image2.jpeg" alt="" /></figure>
-  <figure><img src="Gallery/image3.jpeg" alt="" /></figure>
-  <figure><img src="Gallery/image4.jpeg" alt="" /></figure>
-  <figure><img src="Gallery/image5.jpeg" alt="" /></figure>
-  <figure><img src="Gallery/image6.jpeg" alt="" /></figure>
-</div>
+      <figure><img src="Gallery/image1.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image2.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image3.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image4.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image5.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image6.jpeg" alt="" /></figure>
+    </div>
   </section>
 
   <section id="donations">
@@ -118,88 +181,114 @@ Eshwaragoli, Hosabettu
     Email: [To be added]</p>
 
     <h3>Find Us on the Map</h3>
-<p><a href="https://maps.app.goo.gl/pkzcqt6EuibGCv247" target="_blank">Click here to view location on Google Maps</a></p>
+    <p><a href="https://maps.app.goo.gl/pkzcqt6EuibGCv247" target="_blank">Click here to view location on Google Maps</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Sri Brahma Mugera Sri Mahankali Sri Koraga Thaniya Daivastana, Eshwaragoli, Hosabettu</p>
   </footer>
-<!-- Lightbox Modal -->
-<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:9999;">
-  <span onclick="document.getElementById('lightbox').style.display='none'" style="position:absolute; top:20px; right:30px; color:#fff; font-size:40px; cursor:pointer;">&times;</span>
-  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:8px; transition: opacity 0.3s ease;" />
-  <div id="lightbox-caption" style="color:#fff; margin-top:12px; text-align:center; font-size:16px;"><button id="prevBtn" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:40px; cursor:pointer;">&#8249;</button>
-  <button id="nextBtn" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:40px; cursor:pointer;">&#8250;</button>
-</div>
 
-<script>
-  const galleryImages = document.querySelectorAll('.gallery img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  let currentIndex = 0;
+  <!-- Lightbox Modal -->
+  <div id="lightbox">
+    <span onclick="lightbox.style.display='none'">&times;</span>
+    <img id="lightbox-img" src="" />
+    <div id="lightbox-caption"></div>
+    <div id="image-count"></div>
+    <button id="prevBtn">&#8249;</button>
+    <button id="nextBtn">&#8250;</button>
+  </div>
 
-  function showImage(index) {
-    const img = galleryImages[index];
-    if (!img) return;
-    lightboxImg.style.opacity = 0;
-    setTimeout(() => {
-      lightboxImg.src = img.src;
-      lightboxCaption.innerText = '';
-      lightboxImg.style.opacity = 1;
-    }, 150);
-    currentIndex = index;
-    lightbox.style.display = 'flex';
-  }
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const imageCount = document.getElementById('image-count');
+    let currentIndex = 0;
+    let autoplayInterval;
 
-  galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => showImage(index));
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox || e.target.tagName === 'SPAN') {
-      lightbox.style.display = 'none';
+    function showImage(index) {
+      const img = galleryImages[index];
+      if (!img) return;
+      lightboxImg.style.opacity = 0;
+      setTimeout(() => {
+        lightboxImg.src = img.src;
+        lightboxCaption.innerText = img.alt || '';
+        imageCount.innerText = `Image ${index + 1} of ${galleryImages.length}`;
+        lightboxImg.style.opacity = 1;
+      }, 150);
+      currentIndex = index;
+      lightbox.style.display = 'flex';
     }
-  });
 
-  document.addEventListener('keydown', (e) => {
-    if (lightbox.style.display !== 'flex') return;
-    if (e.key === 'ArrowRight') {
-      showImage((currentIndex + 1) % galleryImages.length);
-    } else if (e.key === 'ArrowLeft') {
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        showImage(index);
+        startAutoplay();
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.tagName === 'SPAN') {
+        stopAutoplay();
+        lightbox.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display !== 'flex') return;
+      if (e.key === 'ArrowRight') {
+        showImage((currentIndex + 1) % galleryImages.length);
+      } else if (e.key === 'ArrowLeft') {
+        showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+      } else if (e.key === 'Escape') {
+        stopAutoplay();
+        lightbox.style.display = 'none';
+      }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
       showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
-    } else if (e.key === 'Escape') {
-      lightbox.style.display = 'none';
-    }
-  });
+    });
 
-  document.getElementById('prevBtn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
-  });
-
-  document.getElementById('nextBtn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    showImage((currentIndex + 1) % galleryImages.length);
-  });
-
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  lightbox.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  lightbox.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchEndX < touchStartX - 50) {
+    document.getElementById('nextBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
       showImage((currentIndex + 1) % galleryImages.length);
-    }
-    if (touchEndX > touchStartX + 50) {
-      showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
-    }
-  });
-</script>
+    });
 
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 50) {
+        showImage((currentIndex + 1) % galleryImages.length);
+      }
+      if (touchEndX > touchStartX + 50) {
+        showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+      }
+    });
+
+    lightboxImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lightboxImg.classList.toggle('zoomed');
+    });
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayInterval = setInterval(() => {
+        showImage((currentIndex + 1) % galleryImages.length);
+      }, 3000);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+  </script>
 </body>
 </html>
