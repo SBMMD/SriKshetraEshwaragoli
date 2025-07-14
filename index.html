@@ -98,6 +98,30 @@
         font-size: 14px;
       }
     }
+    .event-schedule {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .event-schedule .text-list {
+      flex: 1;
+    }
+    .event-schedule .schedule-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .event-schedule .schedule-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 <body>
@@ -134,34 +158,35 @@
     ಈ ಕ್ಷೇತ್ರದ ಶ್ರೀ ಕೊರಗಜ್ಜ ಸಾನಿಧ್ಯವು ಊರ ಪರವೂರ ಭಕ್ತದಿಗಳ ಸಹಾಯದಿಂದ 2014 ರಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರಗೊಂಡು ಭಕ್ತರ ಪಾಲಿಗೆ ಶಕ್ತಿ ಕೇಂದ್ರವಾಗಿದೆ. ಪ್ರತಿ ತಿಂಗಳ ಸಂಕ್ರಮಣದಂದು ದಾನಿಗಳ ಮುಖೇನ  ಸುಮಾರು 1500ಕ್ಕಿಂತಲೂ ಹೆಚ್ಚು ಭಕ್ತಾಧಿಗಳು ಅನ್ನ ಪ್ರಸಾದ ಸ್ವೀಕರಿಸುತ್ತಾರೆ. ಮಾತೆ ಮಹಾಂಕಾಳಿ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಗುಡಿ ಗೋಪುರವನ್ನು ಸಂಪೂರ್ಣ ಶಿಲಾಮಯಗೊಳಿಸಲು ಸುಮಾರು 1 ಕೋಟಿ 50 ಲಕ್ಷಕ್ಕಿಂತಲು ಹೆಚ್ಚಿನ ಮೊತ್ತದಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರ ನಡೆಸಿ ದಿನಾಂಕ 22.04.2024 ರಿಂದ 27.04.2024ರ ತನಕ ಕ್ಷೇತ್ರದಲ್ಲಿ ಪುನರ್ ಪ್ರತಿಷ್ಠಾ ಕಲಶಾಭಿಷೇಕ ಹಾಗೂ ಚಂಡಿಕಾ ಹೋಮದೊಂದಿಗೆ ಲೋಕಾರ್ಪಣೆಗೊಂಡಿದೆ.
   </p>
 
-  <section id="events">
-  <h2>Events</h2>
-  <div class="event-schedule">
-    <div class="text-list">
-      <ul>
-        <li>Monthly Sankramana Pooja - 2025</li>
+   <section id="events">
+    <h2>Events</h2>
+    <div class="event-schedule">
+      <div class="text-list">
         <ul>
-          <li>January 14: Makara Sankranti</li>
-          <li>February 12: Kumbha Sankranti</li>
-          <li>March 14: Meena Sankranti</li>
-          <li>April 14: Mesha Sankranti</li>
-          <li>May 15: Vrishabha Sankranti</li>
-          <li>June 15: Mithuna Sankranti</li>
-          <li>July 16: Karka Sankranti</li>
-          <li>August 16: Simha Sankranti</li>
-          <li>September 17: Kanya Sankranti</li>
-          <li>October 17: Tula Sankranti</li>
-          <li>November 16: Vrischika Sankranti</li>
-          <li>December 16: Dhanu Sankranti</li>
+          <li>Monthly Sankramana Pooja - 2025
+            <ul>
+              <li>January 14: Makara Sankranti</li>
+              <li>February 12: Kumbha Sankranti</li>
+              <li>March 14: Meena Sankranti</li>
+              <li>April 14: Mesha Sankranti</li>
+              <li>May 15: Vrishabha Sankranti</li>
+              <li>June 15: Mithuna Sankranti</li>
+              <li>July 16: Karka Sankranti</li>
+              <li>August 16: Simha Sankranti</li>
+              <li>September 17: Kanya Sankranti</li>
+              <li>October 17: Tula Sankranti</li>
+              <li>November 16: Vrischika Sankranti</li>
+              <li>December 16: Dhanu Sankranti</li>
+            </ul>
+          </li>
+          <li>Annual Nemotsava - Date TBD</li>
         </ul>
-        <li>Annual Nemotsava - Date TBD</li>
-      </ul>
+      </div>
+      <div class="schedule-image">
+        <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Pooja Dates">
+      </div>
     </div>
-    <div class="schedule-image">
-      <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Pooja Dates">
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
@@ -172,7 +197,6 @@
       <figure><img src="Gallery/image4.jpeg" alt="" /></figure>
       <figure><img src="Gallery/image5.jpeg" alt="" /></figure>
       <figure><img src="Gallery/image6.jpeg" alt="" /></figure>
-      <figure><img src="Gallery/image7.jpeg" alt="" /></figure>
     </div>
   </section>
 
