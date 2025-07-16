@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sri Brahma Mugera Sri Mahankali Daivastana, Eshwaragoli - Hosabettu</title>
-  <base href="/SriKshetraEshwaragoli/" />
   <style>
     /* --- Gallery Styling --- */
     .gallery {
@@ -37,8 +36,10 @@
     #lightbox {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0, 0, 0, 0.9);
       align-items: center;
       justify-content: center;
@@ -57,17 +58,6 @@
       transform: scale(2);
       cursor: zoom-out;
     }
-    #lightbox-caption {
-      color: #fff;
-      margin-top: 12px;
-      text-align: center;
-      font-size: 16px;
-    }
-    #image-count {
-      color: #ccc;
-      font-size: 14px;
-      margin-top: 4px;
-    }
     #prevBtn, #nextBtn {
       position: absolute;
       top: 50%;
@@ -81,7 +71,7 @@
     }
     #prevBtn { left: 20px; }
     #nextBtn { right: 20px; }
-    #lightbox span {
+    #lightbox span.close {
       position: absolute;
       top: 20px;
       right: 30px;
@@ -94,9 +84,6 @@
       .gallery img {
         width: 100px;
         height: 75px;
-      }
-      #lightbox-caption {
-        font-size: 14px;
       }
     }
   </style>
@@ -113,23 +100,21 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <figure><img src="Gallery/image1.jpeg" alt="Image 1" /></figure>
-      <figure><img src="Gallery/image2.jpeg" alt="Image 2" /></figure>
-      <figure><img src="Gallery/image3.jpeg" alt="Image 3" /></figure>
-      <figure><img src="Gallery/image4.jpeg" alt="Image 4" /></figure>
-      <figure><img src="Gallery/image5.jpeg" alt="Image 5" /></figure>
-      <figure><img src="Gallery/image6.jpeg" alt="Image 6" /></figure>
-      <figure><img src="Gallery/image7.jpeg" alt="Image 7" /></figure>
-      <figure><img src="Gallery/image8.jpeg" alt="Image 8" /></figure>
+      <figure><img src="Gallery/image1.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image2.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image3.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image4.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image5.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image6.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image7.jpeg" alt="" /></figure>
+      <figure><img src="Gallery/image8.jpeg" alt="" /></figure>
     </div>
   </section>
 
   <!-- Lightbox Modal -->
   <div id="lightbox">
-    <span>&times;</span>
-    <img id="lightbox-img" src="" />
-    <div id="lightbox-caption"></div>
-    <div id="image-count"></div>
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded image" />
     <button id="prevBtn">&#8249;</button>
     <button id="nextBtn">&#8250;</button>
   </div>
@@ -139,10 +124,9 @@
     const galleryImages = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const imageCount = document.getElementById('image-count');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const closeBtn = document.querySelector('#lightbox span.close');
     let currentIndex = 0;
     let autoplayInterval = null;
 
@@ -152,12 +136,11 @@
       lightboxImg.style.opacity = 0;
       setTimeout(() => {
         lightboxImg.src = img.src;
-        lightboxCaption.innerText = img.alt || '';
-        imageCount.innerText = `Image ${index + 1} of ${galleryImages.length}`;
         lightboxImg.style.opacity = 1;
       }, 150);
       currentIndex = index;
       lightbox.style.display = 'flex';
+      lightboxImg.classList.remove('zoomed');
     }
 
     function startAutoplay() {
@@ -193,8 +176,14 @@
       showImage((currentIndex + 1) % galleryImages.length);
     });
 
+    closeBtn.addEventListener('click', () => {
+      stopAutoplay();
+      lightbox.style.display = 'none';
+      lightboxImg.classList.remove('zoomed');
+    });
+
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target.tagName === 'SPAN') {
+      if (e.target === lightbox) {
         stopAutoplay();
         lightbox.style.display = 'none';
         lightboxImg.classList.remove('zoomed');
