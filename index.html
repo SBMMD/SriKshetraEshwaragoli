@@ -148,7 +148,7 @@
       }
     }
 
-    footer {
+  footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,7 +285,10 @@ footer p {
       lbImg.style.display = lbVid.style.display = 'none';
       stop();
       if (el.tagName === 'VIDEO') {
-        lbVid.src = el.src;
+        lbVid.src = el.src + '#t=0.1';
+        lbVid.autoplay = true;
+        lbVid.muted = true;
+        lbVid.play();
         lbVid.style.display = 'block';
       } else {
         lbImg.src = el.src;
