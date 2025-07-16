@@ -50,26 +50,7 @@
       text-align: justify;
     }
 
-    .gallery-filter {
-      text-align: center;
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-    .gallery-filter button {
-      margin: 0 10px;
-      padding: 8px 16px;
-      font-weight: bold;
-      background-color: #004d40;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .gallery-filter button:hover {
-      background-color: #00695c;
-    }
-
+    /* Gallery styling */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -95,10 +76,24 @@
       align-items: center;
       margin: 0;
     }
-    .gallery-item {
+
+    /* Events wrapper styles */
+    .events-wrapper {
       display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .sankramana-img {
+      width: auto;
+      max-height: 100%;
+      max-width: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
+    /* Lightbox styles */
     #lightbox {
       display: none;
       position: fixed;
@@ -140,7 +135,9 @@
       user-select: none;
       z-index: 10000;
     }
-    #closeBtn { right: 30px; }
+    #closeBtn {
+      right: 30px;
+    }
     #prevBtn { left: 20px; }
     #nextBtn { right: 80px; }
 
@@ -151,23 +148,31 @@
       }
     }
 
-    footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: #004d40;
-      color: white;
-      padding: 1em 0;
-      margin-top: 3em;
-      font-size: 0.9em;
-      flex-direction: column;
-    }
+  footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #004d40;
+  color: white;
+  padding: 1em 0;
+  margin-top: 3em;
+  font-size: 0.9em;
+  flex-direction: column;
+}
+
+footer p {
+  margin: 0;
+}
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Sri Brahma Mugera Mahankali Daivastana (R.),<br/>Eshwaragoli, Kulai ‑ Hosabettu.</h1>
+    <h1>
+      Sri Brahma Mugera Mahankali Daivastana (R.),<br/>
+      Eshwaragoli, Kulai ‑ Hosabettu.
+    </h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -180,32 +185,83 @@
     </nav>
   </header>
 
-  <!-- Other sections here like home, about, events, donations, contact -->
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Welcome to the official website of Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai – Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
+  </section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-filter">
-      <button onclick="filterGallery('all')">All</button>
-      <button onclick="filterGallery('photo')">Photos</button>
-      <button onclick="filterGallery('video')">Videos</button>
-    </div>
-    <div class="gallery">
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image1.jpeg" alt="Festival" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image2.jpeg" alt="Pooja" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image3.jpeg" alt="Temple Decor" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image4.jpeg" alt="Nemotsava" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image5.jpeg" alt="Deity" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image6.jpeg" alt="Gopura Work" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image7.jpeg" alt="Night View" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/Photos/image8.jpeg" alt="Lighting" /></figure>
-      <figure class="gallery-item video"><video src="Gallery/Videos/video1.mp4" class="video-thumb"></video></figure>
+ <section id="about">
+  <h2 style="text-align: left;">About the Daivastana</h2>
+  <h3 style="text-align: center;">ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿ</h3>
+  <p style="text-align: justify;">
+    ದೈವ ದೇವರ ಕೃಪೆಯಲ್ಲಿ ಕಂಗೊಳಿಸುತ್ತಿರುವ ನಮ್ಮ ತುಳುನಾಡಿನ ಅನೇಕ ಆರಾಧನಾ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಮಂಗಳೂರು ತಾಲೂಕು ಹೊಸಬೆಟ್ಟು ಗ್ರಾಮದ ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿಯೂ ಒಂದು. ಸುಮಾರು 350 ವರ್ಷಗಳಷ್ಟು ಇತಿಹಾಸವುಳ್ಳ ಈ ಕ್ಷೇತ್ರವು ಮುಗೇರ ಜನಾಂಗದಲ್ಲಿ ಜನಿಸಿ ನಾಟಿ ವೈದ್ಯೆಯಾದ ಪಯ್ಯು ಮುಗೆರ್ತಿಯು ಗಿಡಮುಲಿಕೆಯಾದ "ಇಸರ ಬೇರ"ನ್ನು ಹುಡುಕುತ್ತಾ ಗೋಳಿ ಮರದ ಬುಡದಲ್ಲಿ ಶಿವನನ್ನು ಪ್ರಾರ್ಥಿಸಿದ ಸಂದರ್ಭದಲ್ಲಿ ಅವಳ ಭಕ್ತಿಗೆ ಮೆಚ್ಚಿ ಪರಮ ಭಕ್ತೆಯಾದ ನಿನಗೆ ಮುಂದೊಂದು ದಿನ ಶಿವಜಾಯೆಯಾದ ಶ್ರೀ ಪಾರ್ವತಿಯು ಮಹಾಂಕಾಳಿಯಾಗಿ ಧರ್ಮದೈವಗಳು ಇಲ್ಲಿ ನೆಲೆಯಾಗಿ ಈ ನೆಲದ ಸತ್ಯವನ್ನು ಕಾಪಾಡುವರು ಎಂದು ಅಭಯ ನೀಡಿ ಮುಂದೆ ಈಶ್ವರಗೋಳಿ ಎಂಬ ನಾಮವು ಜನಜನಿತವಾಗುವುದು ಎಂದು ಹರಸಿದರು.
+    <br /><br />
+    ಮುಂದಕ್ಕೆ ಒಂದು ದಿನ ಉಜ್ಜೋಡಿಯಿಂದ ಶ್ರೀ ಬೊಗ್ರ ಪೂಜಾರಿ ಮತ್ತು ದೆಯ್ಯು ಮುಗೇರ ಇವರ ಭಕ್ತಿಗೆ ಒಲಿದು ಶ್ರೀ ಆದಿಮಾಯೆ ಮಹಾಂಕಾಳಿ ಅಮ್ಮನವರು ಈಶ್ವರಗೋಳಿಯಲ್ಲಿ ಬಂದು ನೆಲೆ ನಿಂತರು. ಇಂತಹ ಶಿವ ಒಲುಮೆಯ ಶ್ರೀ ಕ್ಷೇತ್ರದಲ್ಲಿ ನೆಲೆನಿಂತ ಶ್ರೀ ಬ್ರಹ್ಮರು, ಶ್ರೀ ಧರ್ಮರಸು ಉಳ್ಳಾಯ, ಮಹಾಮಾತೆ ಮಹಾಂಕಾಳಿ, ಶ್ರೀ ಬ್ರಹ್ಮ ಮುಗೇರರು, ಶಕ್ತಿಸ್ವರೂಪಿಣಿಯಾದ ತಂಗಡಿ ದೈವ, ವರಾಹಮೂರ್ತಿ ಅಲೇರಾ ಪಂಜುರ್ಲಿ, ದೈವರಾಜ ಮಂತ್ರಗುಳಿಗ, ಸ್ವಾಮಿ ಕೊರಗಜ್ಜ ಧರ್ಮದೈವಗಳ ಆರಾಧನೆ ನಡೆಯುತ್ತಾ ಬಂತು. ವರ್ಷoಪ್ರತಿ ವಿಜೃಂಭಣೆಯಿಂದ ಮೂರೂ ದಿನಗಳಲ್ಲಿ ನೇಮೋತ್ಸವದ ಈ ಸ್ಥಳ ಭಕ್ತರಿಗೆ ದೇಗುಲವಾಯಿತು. ಕಷ್ಟದಿಂದ ಕಣ್ಣೀರು ಹಾಕಿ ಬಂದವರಿಗೆ ಮಗುವಿನಂತೆಯೇ ರಕ್ಷಿಸಿ ಮಾಂಗಲ್ಯ ಭಾಗ್ಯ, ಸಂತಾನ ಭಾಗ್ಯ, ಸಿರಿ ಸೌಭಾಗ್ಯ ನೀಡುವ ಈ ಮಹಾಮಾತೆ ಮಹಾಂಕಾಳಿ ಅಮ್ಮನವರ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಸನ್ನಿಧಾನ ಸರ್ವಧರ್ಮಗಳ ಸಂಗಮವಾಗಿದೆ.
+    <br /><br />
+    ಈ ಕ್ಷೇತ್ರದ ಶ್ರೀ ಕೊರಗಜ್ಜ ಸಾನಿಧ್ಯವು ಊರ ಪರವೂರ ಭಕ್ತದಿಗಳ ಸಹಾಯದಿಂದ 2014 ರಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರಗೊಂಡು ಭಕ್ತರ ಪಾಲಿಗೆ ಶಕ್ತಿ ಕೇಂದ್ರವಾಗಿದೆ. ಪ್ರತಿ ತಿಂಗಳ ಸಂಕ್ರಮಣದಂದು ದಾನಿಗಳ ಮುಖೇನ  ಸುಮಾರು 1500ಕ್ಕಿಂತಲೂ ಹೆಚ್ಚು ಭಕ್ತಾಧಿಗಳು ಅನ್ನ ಪ್ರಸಾದ ಸ್ವೀಕರಿಸುತ್ತಾರೆ. ಮಾತೆ ಮಹಾಂಕಾಳಿ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಗುಡಿ ಗೋಪುರವನ್ನು ಸಂಪೂರ್ಣ ಶಿಲಾಮಯಗೊಳಿಸಲು ಸುಮಾರು 1 ಕೋಟಿ 50 ಲಕ್ಷಕ್ಕಿಂತಲು ಹೆಚ್ಚಿನ ಮೊತ್ತದಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರ ನಡೆಸಿ ದಿನಾಂಕ 22.04.2024 ರಿಂದ 27.04.2024ರ ತನಕ ಕ್ಷೇತ್ರದಲ್ಲಿ ಪುನರ್ ಪ್ರತಿಷ್ಠಾ ಕಲಶಾಭಿಷೇಕ ಹಾಗೂ ಚಂಡಿಕಾ ಹೋಮದೊಂದಿಗೆ ಲೋಕಾರ್ಪಣೆಗೊಂಡಿದೆ.
+  </p>
+
+  <section id="events">
+    <h2>Events</h2>
+    <div class="events-wrapper">
+      <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Dates" class="sankramana-img" />
+      <ul>
+        <li><strong>Monthly Sankramana Pooja – 2025</strong></li>
+        <ul>
+          <li>January 14: Makara Sankranti</li>
+          <li>February 12: Kumbha Sankranti</li>
+          <li>March 14: Meena Sankranti</li>
+          <li>April 14: Mesha Sankranti</li>
+          <li>May 15: Vrishabha Sankranti</li>
+          <li>June 15: Mithuna Sankranti</li>
+          <li>July 16: Karka Sankranti</li>
+          <li>August 16: Simha Sankranti</li>
+          <li>September 17: Kanya Sankranti</li>
+          <li>October 17: Tula Sankranti</li>
+          <li>November 16: Vrischika Sankranti</li>
+          <li>December 16: Dhanu Sankranti</li>
+        </ul>
+        <li><strong>Annual Nemotsava – Date TBD</strong></li>
+      </ul>
     </div>
   </section>
 
+  <section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <figure><img src="Photos/image1.jpeg" alt="Temple view" /></figure>
+    <figure><img src="Photos/image2.jpeg" alt="Nemotsava celebration" /></figure>
+    <figure><img src="Photos/image3.jpeg" alt="" /></figure>
+    <figure><img src="Photos/image4.jpeg" alt="" /></figure>
+    <figure><img src="Photos/image5.jpeg" alt="" /></figure>
+    <figure><img src="Photos/image6.jpeg" alt="" /></figure>
+    <figure><img src="Photos/image7.jpeg" alt="" /></figure>
+    <figure><img src="Photos/image8.jpeg" alt="" /></figure>
+    <figure>
+      <video src="Videos/video1.mp4" class="video-thumb"></video>
+    </figure>
+  </div>
+</section>
+
+  <section id="donations">
+    <h2>Donations</h2>
+    <p>We will be accepting donations online soon. Thank you for your support!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Location: Eshwaragoli, Hosabettu, Mangalore.<br/>
+    Phone: [To be added]<br/>
+    Email: [To be added]</p>
+    <h3>Find Us on the Map</h3>
+    <p><a href="https://maps.app.goo.gl/pkzcqt6EuibGCv247" target="_blank">Click here...</a></p>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai ‑ Hosabettu.</p>
+    <p>&copy; 2025 Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai ‑ Hosabettu.</p>
   </footer>
 
+  <!-- Lightbox -->
   <div id="lightbox">
     <button id="closeBtn">&times;</button>
     <button id="prevBtn">&#8249;</button>
@@ -215,70 +271,95 @@
   </div>
 
   <script>
-    const thumbs = document.querySelectorAll('.gallery img, .gallery video');
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightbox-img');
-    const lbVid = document.getElementById('lightbox-video');
-    const closeBtn = document.getElementById('closeBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+  const thumbs = document.querySelectorAll('.gallery img, .gallery video');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbVid = document.getElementById('lightbox-video');
+  const closeBtn = document.getElementById('closeBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-    let index = 0, items = Array.from(thumbs), autoplay;
+  let index = 0, items = Array.from(thumbs), autoplay;
 
-    function show(i) {
-      const el = items[i];
-      lbImg.style.display = lbVid.style.display = 'none';
-      stop();
-      if (el.tagName === 'VIDEO') {
-        lbVid.src = el.src + '#t=0.1';
-        lbVid.muted = true;
-        lbVid.autoplay = true;
-        lbVid.play();
-        lbVid.style.display = 'block';
-      } else {
-        lbImg.src = el.src;
-        lbImg.style.display = 'block';
-      }
-      lightbox.style.display = 'flex'; index = i;
+  function show(i) {
+    const el = items[i];
+    lbImg.style.display = lbVid.style.display = 'none';
+    stop();
+
+    if (el.tagName === 'VIDEO') {
+      lbVid.src = el.src + '#t=0.1'; // Ensure starts at offset for autoplay support
+      lbVid.muted = true;
+      lbVid.autoplay = true;
+      lbVid.play();
+      lbVid.style.display = 'block';
+    } else {
+      lbImg.src = el.src;
+      lbImg.style.display = 'block';
     }
 
-    function stop() { clearInterval(autoplay); lbVid.pause(); lbVid.src = ''; }
+    lightbox.style.display = 'flex';
+    index = i;
+  }
 
-    function nav(diff) { stop(); show((index + diff + items.length) % items.length); }
+  function stop() {
+    clearInterval(autoplay);
+    lbVid.pause();
+    lbVid.src = ''; // reset source to stop playback when lightbox closes
+  }
 
-    thumbs.forEach((t,i)=>t.addEventListener('click',()=>{ show(i); autoplay=setInterval(()=>nav(1),3000); }));
-    closeBtn.onclick = () => { stop(); lightbox.style.display = 'none'; };
-    prevBtn.onclick = e => { e.stopPropagation(); nav(-1); };
-    nextBtn.onclick = e => { e.stopPropagation(); nav(1); };
-    lightbox.onclick = e => { if (e.target === lightbox) { stop(); lightbox.style.display = 'none'; }};
-    document.addEventListener('keydown', e => {
-      if (lightbox.style.display !== 'flex') return;
-      if (e.key === 'ArrowRight') nav(1);
-      if (e.key === 'ArrowLeft') nav(-1);
-      if (e.key === 'Escape') { stop(); lightbox.style.display = 'none'; }
-    });
-    let tx=0;
-    lightbox.addEventListener('touchstart',e=>tx=e.changedTouches[0].screenX);
-    lightbox.addEventListener('touchend',e=>{
+  function nav(diff) {
+    stop();
+    show((index + diff + items.length) % items.length);
+  }
+
+  thumbs.forEach((t, i) => t.addEventListener('click', () => {
+    show(i);
+    autoplay = setInterval(() => nav(1), 3000);
+  }));
+
+  closeBtn.onclick = () => {
+    stop();
+    lightbox.style.display = 'none';
+  };
+
+  prevBtn.onclick = e => {
+    e.stopPropagation();
+    nav(-1);
+  };
+
+  nextBtn.onclick = e => {
+    e.stopPropagation();
+    nav(1);
+  };
+
+  lightbox.onclick = e => {
+    if (e.target === lightbox) {
       stop();
-      let dx=e.changedTouches[0].screenX;
-      if(dx<tx-50) nav(1);
-      else if(dx>tx+50) nav(-1);
-    });
-    lbImg.addEventListener('click', e => { e.stopPropagation(); lbImg.classList.toggle('zoomed'); });
-
-    function filterGallery(type) {
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (type === 'all') {
-          item.style.display = 'flex';
-        } else if (item.classList.contains(type)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+      lightbox.style.display = 'none';
     }
-  </script>
-</body>
-</html>
+  };
+
+  document.addEventListener('keydown', e => {
+    if (lightbox.style.display !== 'flex') return;
+    if (e.key === 'ArrowRight') nav(1);
+    if (e.key === 'ArrowLeft') nav(-1);
+    if (e.key === 'Escape') {
+      stop();
+      lightbox.style.display = 'none';
+    }
+  });
+
+  let tx = 0;
+  lightbox.addEventListener('touchstart', e => tx = e.changedTouches[0].screenX);
+  lightbox.addEventListener('touchend', e => {
+    stop();
+    let dx = e.changedTouches[0].screenX;
+    if (dx < tx - 50) nav(1);
+    else if (dx > tx + 50) nav(-1);
+  });
+
+  lbImg.addEventListener('click', e => {
+    e.stopPropagation();
+    lbImg.classList.toggle('zoomed');
+  });
+</script>
