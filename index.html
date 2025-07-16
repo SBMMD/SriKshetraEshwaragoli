@@ -49,7 +49,23 @@
     p {
       text-align: justify;
     }
-
+    .events-wrapper {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .sankramana-img {
+      width: auto;
+      max-height: 100%;
+      max-width: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .event-list {
+      flex: 1;
+    }
     .gallery-filter {
       text-align: center;
       margin-top: 1em;
@@ -69,7 +85,6 @@
     .gallery-filter button:hover {
       background-color: #00695c;
     }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -89,16 +104,9 @@
     .gallery img:hover, .gallery video:hover {
       transform: scale(1.05);
     }
-    figure {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-    }
     .gallery-item {
       display: flex;
     }
-
     #lightbox {
       display: none;
       position: fixed;
@@ -143,14 +151,12 @@
     #closeBtn { right: 30px; }
     #prevBtn { left: 20px; }
     #nextBtn { right: 80px; }
-
     @media (max-width:600px) {
       .gallery img, .gallery video {
         width: 100px;
         height: 75px;
       }
     }
-
     footer {
       display: flex;
       justify-content: center;
@@ -200,7 +206,7 @@
     <h2>Events</h2>
     <div class="events-wrapper">
       <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Dates" class="sankramana-img" />
-      <ul>
+      <ul class="event-list">
         <li><strong>Monthly Sankramana Pooja – 2025</strong></li>
         <ul>
           <li>January 14: Makara Sankranti</li>
@@ -229,16 +235,30 @@
       <button onclick="filterGallery('video')">Videos</button>
     </div>
     <div class="gallery">
-      <figure class="gallery-item photo"><img src="Gallery/image1.jpeg" alt="Festival" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image2.jpeg" alt="Pooja" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image3.jpeg" alt="Temple Decor" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image4.jpeg" alt="Nemotsava" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image5.jpeg" alt="Deity" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image6.jpeg" alt="Gopura Work" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image7.jpeg" alt="Night View" /></figure>
-      <figure class="gallery-item photo"><img src="Gallery/image8.jpeg" alt="Lighting" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image1.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image2.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image3.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image4.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image5.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image6.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image7.jpeg" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image8.jpeg" /></figure>
       <figure class="gallery-item video"><video src="Gallery/video1.mp4" class="video-thumb"></video></figure>
     </div>
+  </section>
+
+  <section id="donations">
+    <h2>Donations</h2>
+    <p>We will be accepting donations online soon. Thank you for your support!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Location: Eshwaragoli, Hosabettu, Mangalore.<br/>
+    Phone: [To be added]<br/>
+    Email: [To be added]</p>
+    <h3>Find Us on the Map</h3>
+    <p><a href="https://maps.app.goo.gl/pkzcqt6EuibGCv247" target="_blank">Click here...</a></p>
   </section>
 
   <footer>
@@ -282,9 +302,7 @@
     }
 
     function stop() { clearInterval(autoplay); lbVid.pause(); lbVid.src = ''; }
-
     function nav(diff) { stop(); show((index + diff + items.length) % items.length); }
-
     thumbs.forEach((t,i)=>t.addEventListener('click',()=>{ show(i); autoplay=setInterval(()=>nav(1),3000); }));
     closeBtn.onclick = () => { stop(); lightbox.style.display = 'none'; };
     prevBtn.onclick = e => { e.stopPropagation(); nav(-1); };
