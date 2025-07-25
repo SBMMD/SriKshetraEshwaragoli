@@ -166,7 +166,7 @@
     <figure class="gallery-item photo photo-only"><img src="Gallery/image9.jpeg" /></figure>
     <figure class="gallery-item photo photo-only"><img src="Gallery/image10.jpeg" /></figure>
     <figure class="gallery-item photo photo-only"><img src="Gallery/image11.jpeg" /></figure>
-    <figure class="gallery-item photo photo-only"><img src="Gallery/image12.jpeg" /></figure>      
+    <figure class="gallery-item photo photo-only"><img src="Gallery/image12.jpeg" /></figure>   
     <figure class="gallery-item video video-only"><video src="Gallery/video1.mp4" class="video-thumb" muted autoplay loop></video></figure>
     <figure class="gallery-item video video-only"><video src="Gallery/Sankramana.mp4" class="video-thumb" muted autoplay loop></video></figure>
     </div>
@@ -177,9 +177,9 @@
   <figure class="gallery-item photo mugera-sangama"><img src="Gallery/MugeraSangama3.jpg" /></figure>
   <figure class="gallery-item photo mugera-sangama"><img src="Gallery/MugeraSangama4.jpg" /></figure>
   <figure class="gallery-item photo mugera-sangama"><img src="Gallery/MugeraSangama5.jpg" /></figure>
-  <figure class="gallery-item video mugera-sangama"><video src="Gallery/MugeraSangama_video1.mp4" class="video-thumb" muted autoplay loop></video></figure>
-  <figure class="gallery-item video mugera-sangama"><video src="Gallery/MugeraSangama_video2.mp4" class="video-thumb" muted autoplay loop></video></figure>
-  </div>
+  <figure class="gallery-item video mugera-sangama"><video src="Gallery/MugeraSangama_video1.mp4" class="video-thumb" controls></video></figure>
+  <figure class="gallery-item video mugera-sangama"><video src="Gallery/MugeraSangama_video2.mp4" class="video-thumb" controls></video></figure>
+</div>
   </section>
 
   <section id="donations">
@@ -259,14 +259,14 @@
     });
     lbImg.addEventListener('click', e => { e.stopPropagation(); lbImg.classList.toggle('zoomed'); });
 
-    function filterGallery(type) {
+  function filterGallery(type) {
     const items = document.querySelectorAll('.gallery-item');
     items.forEach(item => {
       if (type === 'all') {
         item.style.display = 'flex';
-      } else if (type === 'photo-only' && item.classList.contains('photo')) {
+      } else if (type === 'photo-only' && item.classList.contains('photo') && !item.classList.contains('mugera-sangama')) {
         item.style.display = 'flex';
-      } else if (type === 'video-only' && item.classList.contains('video')) {
+      } else if (type === 'video-only' && item.classList.contains('video') && !item.classList.contains('mugera-sangama')) {
         item.style.display = 'flex';
       } else if (item.classList.contains(type)) {
         item.style.display = 'flex';
