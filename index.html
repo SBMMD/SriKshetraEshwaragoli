@@ -130,13 +130,15 @@
       cursor: zoom-in;
     }
     #lightbox-img.zoomed {
-      transform: scale(2);
+      transform: scale(1.5);
       cursor: zoom-out;
+      transition: transform 0.3s ease;
     }
-    #lightbox-video {
-      width: auto;
-      height: auto;
-    }
+      #lightbox-video.zoomed {
+      transform: scale(1.5);
+      cursor: zoom-out;
+      transition: transform 0.3s ease;
+    }  
     #prevBtn, #nextBtn, #closeBtn {
       position: absolute;
       top: 20px;
@@ -266,7 +268,8 @@
     <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama4.jpg" alt="Mugera Sangama 4" /></figure>
     <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama5.jpg" alt="Mugera Sangama 5" /></figure>
     <figure class="gallery-item mugera-sangama"><video src="Gallery/MugeraSangama_video1.mp4" class="thumb" muted></video></figure>
-    <figure class="gallery-item mugera-sangama"><video src="Gallery/MugeraSangama_video2.mp4" class="thumb" muted></video></figure>
+    <figure class="gallery-item mugera-sangama"><video src="Gallery/MugeraSangama_video1.mp4" class="thumb" preload="metadata"></video>
+    </figure>
   </div>
   </section>
 
@@ -296,7 +299,7 @@
     <video id="lightbox-video" controls></video>
   </div>
 
-  <<script>
+  <script>
   const thumbs = document.querySelectorAll('.gallery img, .gallery video');
   const lightbox = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
@@ -313,11 +316,13 @@
     stop();
 
     if (el.tagName === 'VIDEO') {
-      lbVid.src = el.src + '#t=0.1';
-      lbVid.muted = false;               // ✅ Play with audio
+      lbVid.src = el.src + '#t=0.1';     // helps force reload
+      lbVid.muted = false;               // ✅ audio enabled
       lbVid.autoplay = true;
       lbVid.style.display = 'block';
-      lbVid.play();
+      lbVid.play().catch(err => {
+        console.error("Video autoplay failed:", err);
+      });
     } else {
       lbImg.src = el.src;
       lbImg.classList.remove('zoomed');
@@ -378,6 +383,7 @@
     }
   });
 
+  // Touch support
   let tx = 0;
   lightbox.addEventListener('touchstart', e => tx = e.changedTouches[0].screenX);
   lightbox.addEventListener('touchend', e => {
@@ -387,19 +393,19 @@
     else if (dx > tx + 50) nav(-1);
   });
 
-  // Zoom toggle for image
+  // Zoom toggle for images
   lbImg.addEventListener('click', e => {
     e.stopPropagation();
     lbImg.classList.toggle('zoomed');
   });
 
-  // ✅ Zoom toggle for video (optional)
+  // Zoom toggle for videos (optional)
   lbVid.addEventListener('click', e => {
     e.stopPropagation();
     lbVid.classList.toggle('zoomed');
   });
 
-  // Gallery filter
+  // Filter function
   function filterGallery(type) {
     const items = document.querySelectorAll('.gallery-item');
     items.forEach(item => {
@@ -413,3 +419,4 @@
     });
   }
 </script>
+
