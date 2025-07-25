@@ -386,12 +386,11 @@ function stop() {
     show((index + diff + items.length) % items.length);
   }
 
-  thumbs.forEach((t, i) =>
-    t.addEventListener('click', () => {
-      show(i);
-      autoplay = setInterval(() => nav(1), 3000);
-    })
-  );
+ thumbs.forEach((t, i) =>
+  t.addEventListener('click', () => {
+    show(i); // Show the clicked item only
+  })
+);
 
   closeBtn.onclick = () => {
     stop();
