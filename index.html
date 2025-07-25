@@ -188,7 +188,7 @@
  
   <section id="home">
     <h2>Welcome</h2>
-    <p>Welcome to the official website of Sri Brahma Mugera Sri Mahankali Daivastana, Eshwaragoli - Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
+    <p>Welcome to the official website of Sri Brahma Mugera Sri Mahankali Daivastana, Eshwaragoli, Kulai - Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
     <p>This sacred Daivastana serves as a spiritual center for the worship of several revered Daivas of the Tulu Nadu tradition, including Ullaya, the fierce and protective Mahankali, Brahma Mugera—the ancestral spirit of the Mugera community—Thangadi, Alera Panjurli known for divine justice, Swami Koragajja, the most venerated guardian spirit, and Daivaraja Mantra Guliga, the powerful warrior Daiva invoked through sacred mantras. Each of these Daivas is deeply rooted in the cultural and spiritual heritage of the region, and their worship here continues a legacy of devotion, protection, and community harmony.</p>
   </section>
 
@@ -230,7 +230,7 @@
   
   <div class="event-list">
       <h3>Recent Event: Mugera Sangama - 2025</h3>
-      <p>On July 20, 2025, 'Mugera Sangam–2025' was jointly organized by Mangalore Taluk Mogera Sangha (R.) and Sri Brahma Sri Mugera Mahankali Daivastana (R.).</p>
+      <p>On July 20, 2025, 'Mugera Sangama–2025' was jointly organized by Mangalore Taluk Mogera Sangha (R.) and Sri Brahma Sri Mugera Mahankali Daivastana (R.).</p>
       <p>The event was a grand success, with over 500 people in attendance.</p>
       </div>
   </section>
@@ -260,18 +260,14 @@
     </div>
     
     <div class="gallery">
-        <figure class="gallery-item photo"><img src="Gallery/MugeraSangama1.jpg" alt="Mugera Sangama 1" /></figure>
-        <figure class="gallery-item photo"><img src="Gallery/MugeraSangama2.jpg" /></figure>
-    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama3.jpg" /></figure>
-   		<figure class="gallery-item photo"><img src="Gallery/MugeraSangama4.jpg" /></figure>
-    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama5.jpg" /></figure>
-        <a href="Gallery/MugeraSangama_video1.mp4" class="glightbox mugera-sangama" data-gallery="gallery" data-type="video" data-title="Mugera Sangama Video 1">
-        <video src="Gallery/MugeraSangama_video1.mp4" class="thumb" muted></video>
-      </a>
-      <a href="Gallery/MugeraSangama_video2.mp4" class="glightbox mugera-sangama" data-gallery="gallery" data-type="video" data-title="Mugera Sangama Video 2">
-        <video src="Gallery/MugeraSangama_video2.mp4" class="thumb" muted></video>
-      </a>
-      </div>
+    <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama1.jpg" alt="Mugera Sangama 1" /></figure>
+    <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama2.jpg" alt="Mugera Sangama 2" /></figure>
+    <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama3.jpg" alt="Mugera Sangama 3" /></figure>
+    <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama4.jpg" alt="Mugera Sangama 4" /></figure>
+    <figure class="gallery-item mugera-sangama"><img src="Gallery/MugeraSangama5.jpg" alt="Mugera Sangama 5" /></figure>
+    <figure class="gallery-item mugera-sangama"><video src="Gallery/MugeraSangama_video1.mp4" class="thumb" muted></video></figure>
+    <figure class="gallery-item mugera-sangama"><video src="Gallery/MugeraSangama_video2.mp4" class="thumb" muted></video></figure>
+  </div>
   </section>
 
   <section id="donations">
@@ -300,69 +296,120 @@
     <video id="lightbox-video" controls></video>
   </div>
 
-  <script>
-    const thumbs = document.querySelectorAll('.gallery img, .gallery video');
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightbox-img');
-    const lbVid = document.getElementById('lightbox-video');
-    const closeBtn = document.getElementById('closeBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+  <<script>
+  const thumbs = document.querySelectorAll('.gallery img, .gallery video');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbVid = document.getElementById('lightbox-video');
+  const closeBtn = document.getElementById('closeBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-    let index = 0, items = Array.from(thumbs), autoplay;
+  let index = 0, items = Array.from(thumbs), autoplay;
 
-    function show(i) {
-      const el = items[i];
-      lbImg.style.display = lbVid.style.display = 'none';
+  function show(i) {
+    const el = items[i];
+    lbImg.style.display = lbVid.style.display = 'none';
+    stop();
+
+    if (el.tagName === 'VIDEO') {
+      lbVid.src = el.src + '#t=0.1';
+      lbVid.muted = false;               // ✅ Play with audio
+      lbVid.autoplay = true;
+      lbVid.style.display = 'block';
+      lbVid.play();
+    } else {
+      lbImg.src = el.src;
+      lbImg.classList.remove('zoomed');
+      lbImg.style.display = 'block';
+    }
+
+    lightbox.style.display = 'flex';
+    index = i;
+  }
+
+  function stop() {
+    clearInterval(autoplay);
+    lbVid.pause();
+    lbVid.src = '';
+  }
+
+  function nav(diff) {
+    stop();
+    show((index + diff + items.length) % items.length);
+  }
+
+  thumbs.forEach((t, i) =>
+    t.addEventListener('click', () => {
+      show(i);
+      autoplay = setInterval(() => nav(1), 3000);
+    })
+  );
+
+  closeBtn.onclick = () => {
+    stop();
+    lightbox.style.display = 'none';
+  };
+
+  prevBtn.onclick = e => {
+    e.stopPropagation();
+    nav(-1);
+  };
+
+  nextBtn.onclick = e => {
+    e.stopPropagation();
+    nav(1);
+  };
+
+  lightbox.onclick = e => {
+    if (e.target === lightbox) {
       stop();
-      if (el.tagName === 'VIDEO') {
-        lbVid.src = el.src + '#t=0.1';
-        lbVid.muted = true;
-        lbVid.autoplay = true;
-        lbVid.play();
-        lbVid.style.display = 'block';
+      lightbox.style.display = 'none';
+    }
+  };
+
+  document.addEventListener('keydown', e => {
+    if (lightbox.style.display !== 'flex') return;
+    if (e.key === 'ArrowRight') nav(1);
+    if (e.key === 'ArrowLeft') nav(-1);
+    if (e.key === 'Escape') {
+      stop();
+      lightbox.style.display = 'none';
+    }
+  });
+
+  let tx = 0;
+  lightbox.addEventListener('touchstart', e => tx = e.changedTouches[0].screenX);
+  lightbox.addEventListener('touchend', e => {
+    stop();
+    let dx = e.changedTouches[0].screenX;
+    if (dx < tx - 50) nav(1);
+    else if (dx > tx + 50) nav(-1);
+  });
+
+  // Zoom toggle for image
+  lbImg.addEventListener('click', e => {
+    e.stopPropagation();
+    lbImg.classList.toggle('zoomed');
+  });
+
+  // ✅ Zoom toggle for video (optional)
+  lbVid.addEventListener('click', e => {
+    e.stopPropagation();
+    lbVid.classList.toggle('zoomed');
+  });
+
+  // Gallery filter
+  function filterGallery(type) {
+    const items = document.querySelectorAll('.gallery-item');
+    items.forEach(item => {
+      if (type === 'all') {
+        item.style.display = 'flex';
+      } else if (item.classList.contains(type)) {
+        item.style.display = 'flex';
       } else {
-        lbImg.src = el.src;
-        lbImg.style.display = 'block';
+        item.style.display = 'none';
       }
-      lightbox.style.display = 'flex'; index = i;
-    }
-
-    function stop() { clearInterval(autoplay); lbVid.pause(); lbVid.src = ''; }
-    function nav(diff) { stop(); show((index + diff + items.length) % items.length); }
-    thumbs.forEach((t,i)=>t.addEventListener('click',()=>{ show(i); autoplay=setInterval(()=>nav(1),3000); }));
-    closeBtn.onclick = () => { stop(); lightbox.style.display = 'none'; };
-    prevBtn.onclick = e => { e.stopPropagation(); nav(-1); };
-    nextBtn.onclick = e => { e.stopPropagation(); nav(1); };
-    lightbox.onclick = e => { if (e.target === lightbox) { stop(); lightbox.style.display = 'none'; }};
-    document.addEventListener('keydown', e => {
-      if (lightbox.style.display !== 'flex') return;
-      if (e.key === 'ArrowRight') nav(1);
-      if (e.key === 'ArrowLeft') nav(-1);
-      if (e.key === 'Escape') { stop(); lightbox.style.display = 'none'; }
     });
-    let tx=0;
-    lightbox.addEventListener('touchstart',e=>tx=e.changedTouches[0].screenX);
-    lightbox.addEventListener('touchend',e=>{
-      stop();
-      let dx=e.changedTouches[0].screenX;
-      if(dx<tx-50) nav(1);
-      else if(dx>tx+50) nav(-1);
-    });
-    lbImg.addEventListener('click', e => { e.stopPropagation(); lbImg.classList.toggle('zoomed'); });
-
-    function filterGallery(type) {
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (type === 'all') {
-          item.style.display = 'flex';
-        } else if (item.classList.contains(type)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-  </script>
-</body>
-</html>
+  }
+</script>
