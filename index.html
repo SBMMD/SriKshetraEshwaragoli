@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai - Hosabettu.</title>
+  <link rel="icon" href="favicon.ico" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -49,113 +53,35 @@
     p {
       text-align: justify;
     }
-    .events-wrapper {
+    .gallery {
       display: flex;
-      gap: 20px;
-      align-items: stretch;
-      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 2em;
     }
-    .sankramana-img {
-      width: auto;
-      max-height: 100%;
-      max-width: 300px;
-      object-fit: contain;
+    .gallery img, .gallery video {
+      max-width: 90vw;
+      max-height: 80vh;
+      margin: 1em auto;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-    .event-list {
-      flex: 1;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     .gallery-filter {
       text-align: center;
-      margin-top: 1em;
       margin-bottom: 1em;
     }
     .gallery-filter button {
-      margin: 0 10px;
-      padding: 8px 16px;
-      font-weight: bold;
-      background-color: #004d40;
-      color: white;
+      margin: 0 0.5em;
+      padding: 0.5em 1em;
       border: none;
-      border-radius: 6px;
+      background: #004d40;
+      color: white;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
     .gallery-filter button:hover {
-      background-color: #00695c;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 1em;
-    }
-    .gallery img, .gallery video {
-      width: 120px;
-      height: 90px;
-      object-fit: cover;
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s ease-in-out;
-    }
-    .gallery img:hover, .gallery video:hover {
-      transform: scale(1.05);
-    }
-    .gallery-item {
-      display: flex;
-    }
-    #lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 10px;
-      z-index: 9999;
-    }
-    #lightbox-img, #lightbox-video {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-      object-fit: contain;
-    }
-    #lightbox-img {
-      transition: transform 0.3s ease;
-      cursor: zoom-in;
-    }
-    #lightbox-img.zoomed {
-      transform: scale(2);
-      cursor: zoom-out;
-    }
-    #lightbox-video {
-      width: auto;
-      height: auto;
-    }
-    #prevBtn, #nextBtn, #closeBtn {
-      position: absolute;
-      top: 20px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 40px;
-      cursor: pointer;
-      user-select: none;
-      z-index: 10000;
-    }
-    #closeBtn { right: 30px; }
-    #prevBtn { left: 20px; }
-    #nextBtn { right: 80px; }
-    @media (max-width:600px) {
-      .gallery img, .gallery video {
-        width: 100px;
-        height: 75px;
-      }
+      background: #00695c;
     }
     footer {
       display: flex;
@@ -169,6 +95,32 @@
       font-size: 0.9em;
       flex-direction: column;
     }
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    #lightbox img, #lightbox video {
+      max-width: 90vw;
+      max-height: 80vh;
+    }
+    #closeBtn, #prevBtn, #nextBtn {
+      position: absolute;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 2em;
+      cursor: pointer;
+    }
+    #closeBtn { top: 1em; right: 1em; }
+    #prevBtn { top: 50%; left: 1em; transform: translateY(-50%); }
+    #nextBtn { top: 50%; right: 1em; transform: translateY(-50%); }
   </style>
 </head>
 <body>
@@ -185,46 +137,62 @@
       </ul>
     </nav>
   </header>
- 
+
   <section id="home">
     <h2>Welcome</h2>
     <p>Welcome to the official website of Sri Brahma Mugera Sri Mahankali Daivastana, Eshwaragoli - Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
-    <p>This sacred Daivastana serves as a spiritual center for the worship of several revered Daivas of the Tulu Nadu tradition, including Ullaya, the fierce and protective Mahankali, Brahma Mugera—the ancestral spirit of the Mugera community—Thangadi, Alera Panjurli known for divine justice, Swami Koragajja, the most venerated guardian spirit, and Daivaraja Mantra Guliga, the powerful warrior Daiva invoked through sacred mantras. Each of these Daivas is deeply rooted in the cultural and spiritual heritage of the region, and their worship here continues a legacy of devotion, protection, and community harmony.</p>
+    <p>This sacred Daivastana serves as a spiritual center for the worship of several revered Daivas of the Tulu Nadu tradition, including Ullaya, Mahankali, Brahma Mugera, Thangadi, Alera Panjurli, Swami Koragajja, and Daivaraja Mantra Guliga.</p>
   </section>
 
- <section id="about">
-  <h2 style="text-align: left;">About the Daivastana</h2>
-  <h3 style="text-align: center;">ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿ</h3>
-  <p style="text-align: justify;">
-    ದೈವ ದೇವರ ಕೃಪೆಯಲ್ಲಿ ಕಂಗೊಳಿಸುತ್ತಿರುವ ನಮ್ಮ ತುಳುನಾಡಿನ ಅನೇಕ ಆರಾಧನಾ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಮಂಗಳೂರು ತಾಲೂಕು ಹೊಸಬೆಟ್ಟು ಗ್ರಾಮದ ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿಯೂ ಒಂದು. ಸುಮಾರು 350 ವರ್ಷಗಳಷ್ಟು ಇತಿಹಾಸವುಳ್ಳ ಈ ಕ್ಷೇತ್ರವು ಮುಗೇರ ಜನಾಂಗದಲ್ಲಿ ಜನಿಸಿ ನಾಟಿ ವೈದ್ಯೆಯಾದ ಪಯ್ಯು ಮುಗೆರ್ತಿಯು ಗಿಡಮುಲಿಕೆಯಾದ "ಇಸರ ಬೇರ"ನ್ನು ಹುಡುಕುತ್ತಾ ಗೋಳಿ ಮರದ ಬುಡದಲ್ಲಿ ಶಿವನನ್ನು ಪ್ರಾರ್ಥಿಸಿದ ಸಂದರ್ಭದಲ್ಲಿ ಅವಳ ಭಕ್ತಿಗೆ ಮೆಚ್ಚಿ ಪರಮ ಭಕ್ತೆಯಾದ ನಿನಗೆ ಮುಂದೊಂದು ದಿನ ಶಿವಜಾಯೆಯಾದ ಶ್ರೀ ಪಾರ್ವತಿಯು ಮಹಾಂಕಾಳಿಯಾಗಿ ಧರ್ಮದೈವಗಳು ಇಲ್ಲಿ ನೆಲೆಯಾಗಿ ಈ ನೆಲದ ಸತ್ಯವನ್ನು ಕಾಪಾಡುವರು ಎಂದು ಅಭಯ ನೀಡಿ ಮುಂದೆ ಈಶ್ವರಗೋಳಿ ಎಂಬ ನಾಮವು ಜನಜನಿತವಾಗುವುದು ಎಂದು ಹರಸಿದರು.
-    <br /><br />
-    ಮುಂದಕ್ಕೆ ಒಂದು ದಿನ ಉಜ್ಜೋಡಿಯಿಂದ ಶ್ರೀ ಬೊಗ್ರ ಪೂಜಾರಿ ಮತ್ತು ದೆಯ್ಯು ಮುಗೇರ ಇವರ ಭಕ್ತಿಗೆ ಒಲಿದು ಶ್ರೀ ಆದಿಮಾಯೆ ಮಹಾಂಕಾಳಿ ಅಮ್ಮನವರು ಈಶ್ವರಗೋಳಿಯಲ್ಲಿ ಬಂದು ನೆಲೆ ನಿಂತರು. ಇಂತಹ ಶಿವ ಒಲುಮೆಯ ಶ್ರೀ ಕ್ಷೇತ್ರದಲ್ಲಿ ನೆಲೆನಿಂತ ಶ್ರೀ ಬ್ರಹ್ಮರು, ಶ್ರೀ ಧರ್ಮರಸು ಉಳ್ಳಾಯ, ಮಹಾಮಾತೆ ಮಹಾಂಕಾಳಿ, ಶ್ರೀ ಬ್ರಹ್ಮ ಮುಗೇರರು, ಶಕ್ತಿಸ್ವರೂಪಿಣಿಯಾದ ತಂಗಡಿ ದೈವ, ವರಾಹಮೂರ್ತಿ ಅಲೇರಾ ಪಂಜುರ್ಲಿ, ದೈವರಾಜ ಮಂತ್ರಗುಳಿಗ, ಸ್ವಾಮಿ ಕೊರಗಜ್ಜ ಧರ್ಮದೈವಗಳ ಆರಾಧನೆ ನಡೆಯುತ್ತಾ ಬಂತು. ವರ್ಷoಪ್ರತಿ ವಿಜೃಂಭಣೆಯಿಂದ ಮೂರೂ ದಿನಗಳಲ್ಲಿ ನೇಮೋತ್ಸವದ ಈ ಸ್ಥಳ ಭಕ್ತರಿಗೆ ದೇಗುಲವಾಯಿತು. ಕಷ್ಟದಿಂದ ಕಣ್ಣೀರು ಹಾಕಿ ಬಂದವರಿಗೆ ಮಗುವಿನಂತೆಯೇ ರಕ್ಷಿಸಿ ಮಾಂಗಲ್ಯ ಭಾಗ್ಯ, ಸಂತಾನ ಭಾಗ್ಯ, ಸಿರಿ ಸೌಭಾಗ್ಯ ನೀಡುವ ಈ ಮಹಾಮಾತೆ ಮಹಾಂಕಾಳಿ ಅಮ್ಮನವರ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಸನ್ನಿಧಾನ ಸರ್ವಧರ್ಮಗಳ ಸಂಗಮವಾಗಿದೆ.
-    <br /><br />
-    ಈ ಕ್ಷೇತ್ರದ ಶ್ರೀ ಕೊರಗಜ್ಜ ಸಾನಿಧ್ಯವು ಊರ ಪರವೂರ ಭಕ್ತದಿಗಳ ಸಹಾಯದಿಂದ 2014 ರಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರಗೊಂಡು ಭಕ್ತರ ಪಾಲಿಗೆ ಶಕ್ತಿ ಕೇಂದ್ರವಾಗಿದೆ. ಪ್ರತಿ ತಿಂಗಳ ಸಂಕ್ರಮಣದಂದು ದಾನಿಗಳ ಮುಖೇನ  ಸುಮಾರು 1500ಕ್ಕಿಂತಲೂ ಹೆಚ್ಚು ಭಕ್ತಾಧಿಗಳು ಅನ್ನ ಪ್ರಸಾದ ಸ್ವೀಕರಿಸುತ್ತಾರೆ. ಮಾತೆ ಮಹಾಂಕಾಳಿ ಹಾಗೂ ಪರಿವಾರ ದೈವಗಳ ಗುಡಿ ಗೋಪುರವನ್ನು ಸಂಪೂರ್ಣ ಶಿಲಾಮಯಗೊಳಿಸಲು ಸುಮಾರು 1 ಕೋಟಿ 50 ಲಕ್ಷಕ್ಕಿಂತಲು ಹೆಚ್ಚಿನ ಮೊತ್ತದಲ್ಲಿ ಜೀರ್ಣೋದ್ಧಾರ ನಡೆಸಿ ದಿನಾಂಕ 22.04.2024 ರಿಂದ 27.04.2024ರ ತನಕ ಕ್ಷೇತ್ರದಲ್ಲಿ ಪುನರ್ ಪ್ರತಿಷ್ಠಾ ಕಲಶಾಭಿಷೇಕ ಹಾಗೂ ಚಂಡಿಕಾ ಹೋಮದೊಂದಿಗೆ ಲೋಕಾರ್ಪಣೆಗೊಂಡಿದೆ.
-  </p>
+  <section id="about">
+    <h2>About the Daivastana</h2>
+    <h3 style="text-align: center;"><span lang="kn">ಶ್ರೀ ಕ್ಷೇತ್ರ ಈಶ್ವರಗೋಳಿ</span></h3>
+    <p><span lang="kn">ದೈವ ದೇವರ ಕೃಪೆಯಲ್ಲಿ ಕಂಗೊಳಿಸುತ್ತಿರುವ ... (Kannada paragraph continues)</span></p>
+  </section>
 
   <section id="events">
     <h2>Events</h2>
     <div class="events-wrapper">
-      <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Dates" class="sankramana-img" />
+      <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Dates 2025" class="sankramana-img" />
       <ul class="event-list">
-        <li><strong>Monthly Sankramana Pooja – 2025</strong></li>
-        <ul>
-          <li>January 14: Makara Sankranti</li>
-          <li>February 12: Kumbha Sankranti</li>
-          <li>March 14: Meena Sankranti</li>
-          <li>April 14: Mesha Sankranti</li>
-          <li>May 15: Vrishabha Sankranti</li>
-          <li>June 15: Mithuna Sankranti</li>
-          <li>July 16: Karka Sankranti</li>
-          <li>August 16: Simha Sankranti</li>
-          <li>September 17: Kanya Sankranti</li>
-          <li>October 17: Tula Sankranti</li>
-          <li>November 16: Vrischika Sankranti</li>
-          <li>December 16: Dhanu Sankranti</li>
-        </ul>
-        <li><strong>Annual Nemotsava – Date TBD</strong></li>
+        <li><strong>Monthly Sankramana Pooja – 2025</strong>
+          <ul>
+            <li>January 14: Makara Sankranti</li>
+            <li>February 12: Kumbha Sankranti</li>
+            <li>March 14: Meena Sankranti</li>
+            <li>April 14: Mesha Sankranti</li>
+            <li>May 15: Vrishabha Sankranti</li>
+            <li>June 15: Mithuna Sankranti</li>
+            <li>July 16: Karka Sankranti</li>
+            <li>August 16: Simha Sankranti</li>
+            <li>September 17: Kanya Sankranti</li>
+            <li>October 17: Tula Sankranti</li>
+            <li>November 16: Vrischika Sankranti</li>
+            <li>December 16: Dhanu Sankranti</li>
+          </ul>
+        </li>
+        <li><strong>Annual Nemotsava – Date TBD</strong></li>
       </ul>
+    </div>
+
+    <div class="event-list">
+      <h3>Recent Event: Mugera Sangama - 2025</h3>
+      <p>On July 20, 2025, 'Mugera Sangam–2025' was jointly organized by Mangalore Taluk Mogera Sangha (R.) and Sri Brahma Sri Mugera Mahankali Daivastana (R.).</p>
+      <p>The event was a grand success, with over 500 people in attendance. Here are some glimpses:</p>
+      <div class="gallery">
+        <figure class="gallery-item photo"><img src="Gallery/MugeraSangama1.jpg" alt="Mugera Sangama 1" /></figure>
+        <figure class="gallery-item photo"><img src="Gallery/MugeraSangama2.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama3.jpg" /></figure>
+   		<figure class="gallery-item photo"><img src="Gallery/MugeraSangama4.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama5.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama6.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama7.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama8.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama9.jpg" /></figure>
+    	<figure class="gallery-item photo"><img src="Gallery/MugeraSangama10.jpg" /></figure>
+        <figure class="gallery-item video"><video src="Gallery/MugeraSangama_video1.mp4" muted autoplay loop playsinline>Your browser does not support the video tag.</video></figure>
+        <figure class="gallery-item video"><video src="Gallery/MugeraSangama_video2.mp4" muted autoplay loop playsinline>Your browser does not support the video tag.</video></figure>
+      </div>
     </div>
   </section>
 
@@ -249,6 +217,7 @@
       <figure class="gallery-item photo"><img src="Gallery/image11.jpeg" /></figure>
       <figure class="gallery-item photo"><img src="Gallery/image12.jpeg" /></figure>      
       <figure class="gallery-item video"><video src="Gallery/video1.mp4" class="video-thumb"></video></figure>
+      <figure class="gallery-item video"><video src="Gallery/Sankramana.mp4" class="video-thumb"></video></figure>
     </div>
   </section>
 
@@ -259,9 +228,7 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Location: Eshwaragoli, Hosabettu, Mangalore.<br/>
-    Phone: [To be added]<br/>
-    Email: [To be added]</p>
+    <p>Location: Eshwaragoli, Hosabettu, Mangalore.<br/>Phone: [To be added]<br/>Email: [To be added]</p>
     <h3>Find Us on the Map</h3>
     <p><a href="https://maps.app.goo.gl/pkzcqt6EuibGCv247" target="_blank">Click here...</a></p>
   </section>
@@ -274,7 +241,7 @@
     <button id="closeBtn">&times;</button>
     <button id="prevBtn">&#8249;</button>
     <button id="nextBtn">&#8250;</button>
-    <img id="lightbox-img" />
+    <img id="lightbox-img" alt="Expanded view" />
     <video id="lightbox-video" controls></video>
   </div>
 
@@ -332,13 +299,7 @@
     function filterGallery(type) {
       const items = document.querySelectorAll('.gallery-item');
       items.forEach(item => {
-        if (type === 'all') {
-          item.style.display = 'flex';
-        } else if (item.classList.contains(type)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
+        item.style.display = (type === 'all' || item.classList.contains(type)) ? 'flex' : 'none';
       });
     }
   </script>
