@@ -239,26 +239,25 @@
 
   <section id="gallery" class="section">
     <h2>Gallery</h2>
-    <div class="gallery-filter">
-      <button onclick="filterGallery('all')">All</button>
-      <button onclick="filterGallery('photo-only')">Photos</button>
-      <button onclick="filterGallery('video-only')">Videos</button>
-      <button onclick="filterGallery('mugera-sangama')">Mugera Sangama 2025</button>
-    </div>
+    <div class="filter-buttons">
+    <button onclick="filterGallery('photo')">Photos</button>
+    <button onclick="filterGallery('video')">Videos</button>
+    <button onclick="filterGallery('mugera-sangama')">Mugera Sangama 2025</button>
+  </div>
     <div class="gallery">
-      <figure class="gallery-item photo all"><img src="Gallery/image1.jpeg" alt="Image 1" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image2.jpeg" alt="Image 2" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image3.jpeg" alt="Image 3" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image4.jpeg" alt="Image 4" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image5.jpeg" alt="Image 5" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image6.jpeg" alt="Image 6" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image7.jpeg" alt="Image 7" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image8.jpeg" alt="Image 8" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image9.jpeg" alt="Image 9" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image10.jpeg" alt="Image 10" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image11.jpeg" alt="Image 11" /></figure>
-      <figure class="gallery-item photo all"><img src="Gallery/image12.jpeg" alt="Image 12" /></figure>     
-      <figure class="gallery-item video all"><video src="Gallery/Sankramana.mp4" class="video-thumb" muted preload="metadata"></video></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image1.jpeg" alt="Image 1" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image2.jpeg" alt="Image 2" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image3.jpeg" alt="Image 3" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image4.jpeg" alt="Image 4" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image5.jpeg" alt="Image 5" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image6.jpeg" alt="Image 6" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image7.jpeg" alt="Image 7" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image8.jpeg" alt="Image 8" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image9.jpeg" alt="Image 9" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image10.jpeg" alt="Image 10" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image11.jpeg" alt="Image 11" /></figure>
+      <figure class="gallery-item photo"><img src="Gallery/image12.jpeg" alt="Image 12" /></figure>     
+      <figure class="gallery-item video"><video src="Gallery/Sankramana.mp4" class="video-thumb" muted preload="metadata"></video></figure>
     </div>
     
     <div class="gallery">
@@ -409,9 +408,7 @@
   function filterGallery(type) {
   const items = document.querySelectorAll('.gallery-item');
   items.forEach(item => {
-    if (type === 'all') {
-      item.style.display = item.classList.contains('all') ? 'flex' : 'none';
-    } else if (item.classList.contains(type)) {
+    if (item.classList.contains(type)) {
       item.style.display = 'flex';
     } else {
       item.style.display = 'none';
