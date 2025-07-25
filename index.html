@@ -346,33 +346,43 @@
   let index = 0, items = Array.from(thumbs), autoplay;
 
   function show(i) {
-    const el = items[i];
-    lbImg.style.display = lbVid.style.display = 'none';
-    stop();
+  const el = items[i];
+  lbImg.style.display = lbVid.style.display = 'none';
+  stop();
 
-    if (el.tagName === 'VIDEO') {
-      lbVid.src = el.src + '#t=0.1';     // helps force reload
-      lbVid.muted = false;               // ✅ audio enabled
-      lbVid.autoplay = true;
-      lbVid.style.display = 'block';
-      lbVid.play().catch(err => {
-        console.error("Video autoplay failed:", err);
-      });
-    } else {
-      lbImg.src = el.src;
-      lbImg.classList.remove('zoomed');
-      lbImg.style.display = 'block';
-    }
+  if (el.tagName === 'VIDEO') {
+    lbVid.src = el.src + '#t=0.1';
+    lbVid.muted = false;
+    lbVid.autoplay = true;
+    lbVid.style.display = 'block';
+    lbVid.play().catch(err => {
+      console.error("Video autoplay failed:", err);
+    });
 
-    lightbox.style.display = 'flex';
-    index = i;
+    // Advance to next slide only after video ends
+    lbVid.onended = () => {
+      nav(1);
+    };
+
+  } else {
+    lbImg.src = el.src;
+    lbImg.classList.remove('zoomed');
+    lbImg.style.display = 'block';
+
+    // Auto advance after 3 seconds only for images
+    autoplay = setInterval(() => nav(1), 3000);
   }
+
+  lightbox.style.display = 'flex';
+  index = i;
+}
 
   function stop() {
-    clearInterval(autoplay);
-    lbVid.pause();
-    lbVid.src = '';
-  }
+  clearInterval(autoplay);
+  lbVid.pause();
+  lbVid.onended = null;
+  lbVid.src = '';
+}
 
   function nav(diff) {
     stop();
