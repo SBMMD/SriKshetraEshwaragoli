@@ -3,70 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sri Brahma Mugera Mahankali Daivastana (R.)</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <title>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
     header {
-      background-color: #222;
+      background: #222;
       color: white;
-      padding: 1rem;
+      padding: 10px;
       text-align: center;
     }
-    nav {
-      background-color: #444;
+    nav ul {
       display: flex;
+      list-style: none;
       justify-content: center;
-      flex-wrap: wrap;
+      padding: 0;
+      background: #444;
+      margin: 0;
     }
-    nav a {
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
       color: white;
-      padding: 1rem;
       text-decoration: none;
+      padding: 10px 0;
       display: block;
     }
-    nav a:hover {
-      background-color: #666;
-    }
     .section {
-      padding: 2rem;
+      padding: 30px;
       max-width: 1200px;
       margin: auto;
     }
-    .gallery-filter {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .gallery-filter button {
-      padding: 10px 20px;
-      margin: 5px;
-      cursor: pointer;
-      background: #ddd;
-      border: none;
-      border-radius: 5px;
-    }
-    .gallery {
+    .flex {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+      gap: 20px;
     }
-    .gallery a {
-      width: 160px;
-      height: 120px;
+    .flex img {
+      max-width: 100%;
+      height: auto;
+    }
+    .kannada-heading {
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .gallery-item {
+      width: 200px;
+      height: 150px;
       overflow: hidden;
-      display: inline-block;
-    }
-    .gallery img.thumb, .gallery video.thumb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -76,12 +68,14 @@
   </header>
 
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#events">Events</a>
-    <a href="#donations">Donations</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#donations">Donations</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <section id="home" class="section">
@@ -103,31 +97,26 @@
 
   <section id="events" class="section">
     <h2>Events</h2>
-    <div class="events-wrapper" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
-      <div class="event-image" style="flex: 1 1 300px; max-width: 400px;">
-        <img src="Gallery/Sankramana_dates_2025.jpeg" alt="Sankramana Dates 2025" style="width: 100%; height: auto; border-radius: 8px;" />
-      </div>
-      <div class="event-details" style="flex: 2 1 400px;">
-        <ul class="event-list">
-          <li><strong>Monthly Sankramana Pooja – 2025</strong>
-            <ul>
-              <li>January 14: Makara Sankranti</li>
-              <li>February 12: Kumbha Sankranti</li>
-              <li>March 14: Meena Sankranti</li>
-              <li>April 14: Mesha Sankranti</li>
-              <li>May 15: Vrishabha Sankranti</li>
-              <li>June 15: Mithuna Sankranti</li>
-              <li>July 16: Karka Sankranti</li>
-              <li>August 16: Simha Sankranti</li>
-              <li>September 17: Kanya Sankranti</li>
-              <li>October 17: Tula Sankranti</li>
-              <li>November 16: Vrischika Sankranti</li>
-              <li>December 16: Dhanu Sankranti</li>
-            </ul>
-          </li>
-          <li><strong>Annual Nemotsava – Date TBD</strong></li>
+    <div class="flex">
+      <img src="images/Sankramana_dates_2025.jpeg" alt="Sankramana Dates 2025" width="300" />
+      <ul>
+        <li><strong>Monthly Sankramana Pooja – 2025</strong></li>
+        <ul>
+          <li>January 14: Makara Sankranti</li>
+          <li>February 12: Kumbha Sankranti</li>
+          <li>March 14: Meena Sankranti</li>
+          <li>April 14: Mesha Sankranti</li>
+          <li>May 15: Vrishabha Sankranti</li>
+          <li>June 15: Mithuna Sankranti</li>
+          <li>July 16: Karka Sankranti</li>
+          <li>August 16: Simha Sankranti</li>
+          <li>September 17: Kanya Sankranti</li>
+          <li>October 17: Tula Sankranti</li>
+          <li>November 16: Vrischika Sankranti</li>
+          <li>December 16: Dhanu Sankranti</li>
         </ul>
-      </div>
+        <li><strong>Annual Nemotsava – Date TBD</strong></li>
+      </ul>
     </div>
   </section>
 
@@ -166,13 +155,14 @@
 
   <section id="donations" class="section">
     <h2>Donations</h2>
-    <p>Your generous contributions help us maintain the temple, conduct festivals, and support community welfare. Donations can be made directly at the temple premises or via bank transfer (details available at the contact desk).</p>
+    <p>Support our traditions and development. Donations are welcome. UPI and bank transfer details will be updated here.</p>
   </section>
 
   <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>Email: contact@mugeratemple.org<br>Phone: +91-98765-43210</p>
-    <p>Location: <a href="https://maps.google.com/?q=Eshwaragoli+Kulai" target="_blank">View on Google Maps</a></p>
+    <h2>Contact</h2>
+    <p>Email: example@example.com</p>
+    <p>Phone: +91-12345-67890</p>
+    <p>Location: a href="https://maps.app.goo.gl/pkzcqt6EuibGCv247" target="_blank">Find us on Google Maps</a></p>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
