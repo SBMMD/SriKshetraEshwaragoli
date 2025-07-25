@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli</title>
+  <title>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai-Hosabettu.</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
   <style>
@@ -48,23 +48,37 @@
       max-width: 100%;
       height: auto;
     }
-    .kannada-heading {
-      font-weight: bold;
-      text-align: center;
-      font-size: 1.2em;
-      margin: 10px 0;
+    .gallery-filter button {
+      margin-right: 10px;
+      padding: 8px 16px;
+      background-color: #eee;
+      border: none;
+      cursor: pointer;
     }
-    .gallery-item {
+    .gallery-filter button:hover {
+      background-color: #ddd;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .gallery .thumb {
       width: 200px;
-      height: 150px;
-      overflow: hidden;
-      border-radius: 8px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: transform 0.2s ease-in-out;
+    }
+    .gallery .thumb:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli</h1>
+    <h1>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai-Hosabettu.</h1>
   </header>
 
   <nav>
@@ -80,7 +94,7 @@
 
   <section id="home" class="section">
     <h2>Welcome</h2>
-    <p>Welcome to the official website of Sri Brahma Mugera Sri Mahankali Daivastana, Eshwaragoli - Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
+    <p>Welcome to the official website of Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai - Hosabettu. This site is dedicated to our sacred traditions and cultural heritage.</p>
     <p>This sacred Daivastana serves as a spiritual center for the worship of several revered Daivas of the Tulu Nadu tradition...</p>
   </section>
 
@@ -171,23 +185,13 @@
       selector: '.glightbox',
       touchNavigation: true,
       loop: true,
-      zoomable: true,
-      autoplayVideos: true,
-      plyr: {
-        config: {
-          autoplay: true,
-          muted: false,
-          volume: 1
-        }
-      }
+      autoplayVideos: true
     });
 
     function filterGallery(type) {
       const items = document.querySelectorAll('.gallery a');
       items.forEach(item => {
-        if (type === 'all') {
-          item.style.display = 'inline-block';
-        } else if (item.classList.contains(type)) {
+        if (type === 'all' || item.classList.contains(type)) {
           item.style.display = 'inline-block';
         } else {
           item.style.display = 'none';
