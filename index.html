@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sri Brahma Mugera Mahankali Daivastana (R.), Eshwaragoli, Kulai - Hosabettu.</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0 1em;
-      background: url('Gallery/backgroundimage.png') no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed; /* default for desktop */
-      color: #333;
-      line-height: 1.6;
-      position: relative;
-      z-index: 0;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 1em;
+  background: url('Gallery/backgroundimage.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+  position: relative;
+  z-index: 0;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.7);
-      z-index: -1;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Optional: fade over background */
+  z-index: -1;
+}
 
     header {
       background-color: transparent;
@@ -241,9 +241,13 @@
     }
 
     /* 📱 Mobile Optimizations (Added Below) */
-    @media (max-width: 768px) {
+ @media (max-width: 768px) {
   body {
+    background: url('Gallery/backgroundimage-mobile.png') no-repeat center top;
+    background-size: contain;
     background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-color: #fff; /* fallback in case image is small */
     padding: 0 0.5em;
   }
 
@@ -252,7 +256,7 @@
   }
 
   nav ul {
-    flex-direction: row; /* Keep horizontal layout on mobile */
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
@@ -260,7 +264,7 @@
 
   nav ul li a {
     font-size: 1em;
-    color: black !important; /* Override white text */
+    color: black !important;
   }
 
   section {
