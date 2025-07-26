@@ -242,12 +242,13 @@ body::before {
 
     /* 📱 Mobile Optimizations (Added Below) */
  @media (max-width: 768px) {
-  body {
-    background: url('Gallery/backgroundimage-mobile.png') no-repeat center top;
-    background-size: contain;
+ body {
+    background: url('Gallery/backgroundimage.png') no-repeat center center;
+    background-size: cover; /* use cover, not contain */
     background-attachment: scroll;
     background-repeat: no-repeat;
-    background-color: #fff; /* fallback in case image is small */
+    background-color: #fff;
+    min-height: 100%;
     padding: 0 0.5em;
   }
 
